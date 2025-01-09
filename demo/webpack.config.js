@@ -6,8 +6,11 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: ["babel-loader"],
+        loader: "babel-loader",
+        options: {
+          presets: ["@babel/react", "@babel/preset-env"],
+          plugins: ["@babel/proposal-class-properties"],
+        },
       },
     ],
   },
